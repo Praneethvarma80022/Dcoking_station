@@ -1,0 +1,181 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 215 28% 7%;
+    --foreground: 213 20% 88%;
+    --card: 217 24% 11%;
+    --card-foreground: 213 20% 88%;
+    --popover: 217 24% 11%;
+    --popover-foreground: 213 20% 88%;
+    --primary: 152 60% 42%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 217 18% 16%;
+    --secondary-foreground: 213 20% 88%;
+    --muted: 217 18% 16%;
+    --muted-foreground: 215 14% 55%;
+    --accent: 217 18% 18%;
+    --accent-foreground: 213 20% 88%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 217 18% 20%;
+    --input: 217 18% 18%;
+    --ring: 152 60% 42%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+    --font-heading: ui-sans-serif, system-ui, sans-serif;
+    --font-body: ui-sans-serif, system-ui, sans-serif;
+    --font-display: ui-sans-serif, system-ui, sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+  }
+}
+
+/* ============================================================
+   LIGHT THEME
+   The industrial UI uses a hardcoded dark palette (bg-[#0b0e12],
+   bg-[#0e1217], border-white/10, text-slate-*). Rather than
+   refactor every file, we override those utilities under
+   html.light. The 3D canvas and log viewer stay dark by design.
+   ============================================================ */
+html.light {
+  --background: 210 25% 95%;
+  --foreground: 215 28% 17%;
+  --card: 0 0% 100%;
+  --card-foreground: 215 28% 17%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 215 28% 17%;
+  --primary: 152 55% 38%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 210 20% 94%;
+  --secondary-foreground: 215 28% 17%;
+  --muted: 210 20% 94%;
+  --muted-foreground: 215 16% 42%;
+  --accent: 210 20% 91%;
+  --accent-foreground: 215 28% 17%;
+  --destructive: 0 72% 45%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 214 25% 86%;
+  --input: 214 25% 90%;
+  --ring: 152 55% 38%;
+  --chart-1: 12 76% 50%;
+  --chart-2: 173 58% 40%;
+  --chart-3: 197 50% 45%;
+  --chart-4: 43 74% 50%;
+  --chart-5: 27 87% 55%;
+}
+
+/* ---- backgrounds & borders ---- */
+html.light .bg-\[\#0b0e12\] { background-color: hsl(210 25% 95%); }
+html.light .bg-\[\#0e1217\] { background-color: hsl(0 0% 100%); }
+html.light .border-white\/10 { border-color: hsl(214 25% 86%); }
+html.light .border-white\/5 { border-color: hsl(214 25% 90%); }
+html.light .bg-white\/5 { background-color: hsl(210 20% 94%); }
+html.light .bg-white\/10 { background-color: hsl(210 20% 91%); }
+html.light .hover\:bg-white\/5:hover { background-color: hsl(210 20% 94%); }
+html.light .hover\:bg-white\/10:hover { background-color: hsl(210 20% 91%); }
+
+/* ---- text (hierarchy inverted: slate-200 strongest → slate-600 dimmest) ---- */
+html.light .text-slate-200 { color: hsl(215 28% 17%); }
+html.light .text-slate-300 { color: hsl(215 20% 27%); }
+html.light .text-slate-400 { color: hsl(215 19% 34%); }
+html.light .text-slate-500 { color: hsl(215 16% 47%); }
+html.light .text-slate-600 { color: hsl(215 18% 55%); }
+html.light .text-white { color: hsl(215 28% 12%); }
+html.light .hover\:text-slate-200:hover { color: hsl(215 28% 17%); }
+
+/* keep white text on solid colored buttons/badges */
+html.light .bg-red-600.text-white,
+html.light .bg-red-500.text-white,
+html.light .bg-emerald-600.text-white,
+html.light .bg-emerald-500.text-white,
+html.light .bg-amber-500.text-white,
+html.light .bg-amber-600\/80.text-white,
+html.light .bg-emerald-600\/80.text-white,
+html.light .bg-blue-600\/80.text-white,
+html.light .bg-blue-600.text-white { color: #fff; }
+
+/* ---- dark panels that stay dark in light theme (3D overlays, log viewer, modal backdrops) ---- */
+html.light .bg-black\/40,
+html.light .bg-black\/50,
+html.light .bg-black\/60,
+html.light .bg-black\/80 { background-color: hsl(215 28% 10%); }
+
+/* restore light text inside dark panels (bg-black/40, /50).
+   /60 and /80 are modal backdrops that wrap light cards — NOT restored. */
+html.light .bg-black\/40 .text-white,
+html.light .bg-black\/50 .text-white { color: #fff; }
+html.light .bg-black\/40 .text-slate-200,
+html.light .bg-black\/50 .text-slate-200,
+html.light .bg-black\/40 .text-slate-300,
+html.light .bg-black\/50 .text-slate-300 { color: #e2e8f0; }
+html.light .bg-black\/40 .text-slate-400,
+html.light .bg-black\/50 .text-slate-400,
+html.light .bg-black\/40.text-slate-400,
+html.light .bg-black\/50.text-slate-400 { color: #94a3b8; }
+html.light .bg-black\/40 .text-slate-500,
+html.light .bg-black\/50 .text-slate-500 { color: #64748b; }
+html.light .bg-black\/40 .text-slate-600,
+html.light .bg-black\/50 .text-slate-600 { color: #64748b; }
+html.light .bg-black\/40.hover\:text-slate-200:hover,
+html.light .bg-black\/50.hover\:text-slate-200:hover { color: #e2e8f0; }
